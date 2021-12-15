@@ -27,8 +27,8 @@ Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
-  total: PropTypes.number,
-  percent: PropTypes.number,
+  total: PropTypes.number.isRequired,
+  percent: PropTypes.number.isRequired,
 };
 
 const listItemTypes = {

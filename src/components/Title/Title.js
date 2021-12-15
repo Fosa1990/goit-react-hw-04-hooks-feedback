@@ -25,7 +25,7 @@ Title.defaultProps = {
 Title.propTypes = {
   title: PropTypes.string,
   titleType: PropTypes.bool,
-  titleStyles: PropTypes.string,
+  titleStyles: PropTypes.string.isRequired,
 };
 
 const titleTypes = {

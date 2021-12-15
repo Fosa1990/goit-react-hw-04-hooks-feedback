@@ -14,7 +14,7 @@ Notofication.defaultProps = {
 };
 
 Notofication.propTypes = {
-  message: PropTypes.string,
+  message: PropTypes.string.isRequired,
 };
 
 const NotoficationWrapper = styled.div`
