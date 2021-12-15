@@ -1,25 +1,13 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const SectionWrapper = styled.section`
-  ${props =>
-    props.flex
-      ? 'display: flex; align-items: center; justify-content: center; flex-direction: row;'
-      : 'display: block;'};
-
-  ${props => (props.vertical ? 'flex-direction: column;' : '')};
-
-  padding: 0 25px;
-  margin: 0;
-`;
-
-const Section = ({ children, flex, vertical }) => {
+export default function Section({ children, flex, vertical }) {
   return (
     <SectionWrapper flex={flex} vertical={vertical}>
       {children}
     </SectionWrapper>
   );
-};
+}
 
 Section.defaultProps = {
   flex: false,
@@ -31,4 +19,14 @@ Section.propTypes = {
   vertical: PropTypes.bool,
 };
 
-export default Section;
+const SectionWrapper = styled.section`
+  ${props =>
+    props.flex
+      ? 'display: flex; align-items: center; justify-content: center; flex-direction: row;'
+      : 'display: block;'};
+
+  ${props => (props.vertical ? 'flex-direction: column;' : '')};
+
+  padding: 0 25px;
+  margin: 0;
+`;
