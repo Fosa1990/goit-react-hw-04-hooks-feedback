@@ -1,6 +1,30 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+export default function FeedbackOptions({ options, onLeaveFeedback }) {
+  return (
+    <FeedbackWrapper>
+      {options.map(element => (
+        <FeedbackButton
+          key={element}
+          type="button"
+          title={`Leave a ${element} response`}
+          onClick={() => {
+            onLeaveFeedback(element);
+          }}
+        >
+          {element}
+        </FeedbackButton>
+      ))}
+    </FeedbackWrapper>
+  );
+}
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
+
 const FeedbackWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -34,29 +58,3 @@ const FeedbackButton = styled.button`
     background-color: var(--red);
   }
 `;
-
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  return (
-    <FeedbackWrapper>
-      {options.map(element => (
-        <FeedbackButton
-          key={element}
-          type="button"
-          title={`Leave a ${element} response`}
-          onClick={() => {
-            onLeaveFeedback(element);
-          }}
-        >
-          {element}
-        </FeedbackButton>
-      ))}
-    </FeedbackWrapper>
-  );
-};
-
-FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string),
-  onLeaveFeedback: PropTypes.func.isRequired,
-};
-
-export default FeedbackOptions;
