@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { getStyles } from '../../layout/layouts';
 const styles = getStyles();
-
 export default function Statistics({ good, neutral, bad, total, percent }) {
   return (
     <List>
@@ -14,7 +13,6 @@ export default function Statistics({ good, neutral, bad, total, percent }) {
     </List>
   );
 }
-
 Statistics.defaultProps = {
   good: 0,
   neutral: 0,
@@ -22,7 +20,6 @@ Statistics.defaultProps = {
   total: 0,
   percent: 0,
 };
-
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
@@ -30,7 +27,6 @@ Statistics.propTypes = {
   total: PropTypes.number.isRequired,
   percent: PropTypes.number.isRequired,
 };
-
 const listItemTypes = {
   green: {
     color: `${styles.greenColor}`,
@@ -48,12 +44,10 @@ const listItemTypes = {
     color: `${styles.whiteColor}`,
   },
 };
-
 const List = styled.ul`
   list-style: none;
   padding: 0;
 `;
-
 const ListItem = styled.li`
   font-family: 'Roboto', sans-serif;
   font-size: 20px;

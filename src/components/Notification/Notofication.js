@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
 export default function Notofication({ message }) {
   return (
     <NotoficationWrapper>
@@ -8,19 +7,15 @@ export default function Notofication({ message }) {
     </NotoficationWrapper>
   );
 }
-
 Notofication.defaultProps = {
   message: "It's empty here",
 };
-
 Notofication.propTypes = {
   message: PropTypes.string.isRequired,
 };
-
 const NotoficationWrapper = styled.div`
   padding: 5px;
 `;
-
 const Text = styled.p`
   margin: 0;
   font-family: 'Roboto', sans-serif;

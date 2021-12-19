@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-export default function ResetButton({ onResetButton }) {
+export default function Button({ title, handleClick, content, type }) {
   return (
-    <ResButton title="Reset values" onClick={onResetButton}>
-      Reset
-    </ResButton>
+    <ButtonWrapper title={title} onClick={handleClick} type={type}>
+      {content}
+    </ButtonWrapper>
   );
 }
-
-ResetButton.propTypes = {
-  onResetButton: PropTypes.func.isRequired,
+Button.defaultProps = {
+  type: 'button',
+  onClick: () => null,
 };
-
-const ResButton = styled.button`
+Button.propTypes = {
+  onResetButton: PropTypes.func,
+};
+const ButtonWrapper = styled.button`
   padding: 10px 20px;
   font-family: var(--big);
   font-weight: 700;
